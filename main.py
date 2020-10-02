@@ -32,24 +32,24 @@ while 1:
             f.close()
 
 
-            if str(f"{username}\n") in usernamechecklist
+            if str(f"{username}\n") in usernamechecklist:
                 print("USERNAME ALREADY TAKEN!!")
                 username = input("ENTER A VALID USERNAME--\n")
                 usernamechecklist = []
                 continue
-            else
+            else:
                 usernamechecklist = []
                 break
 
 
 
 # start of password validating
-        while True
+        while True:
             password = input("Enter Password\nA Valid Password Must Contain Alphabets, Number, Special Symbols(!, @, #, $, %, &, _)\nPassword SHOULD NOT Contain Any Whitespaces And MUST BE Of Less Than Or Equal To 10 Characters Long\n")
 
-            if len(password) =<= 11:
+            if len(password) < 11:
                 pass
-            else
+            else:
                 continue
 
             for letters in password:
@@ -59,7 +59,7 @@ while 1:
             if len(ctrllist) > 0:
                 pass
             else:
-                ctrllist = None
+                ctrllist = []
                 continue
 
 
@@ -130,7 +130,7 @@ while 1:
                 if int(usernameindex) == int(passwordindex):
 
 
-                    print("WELCOME TO YOUR FILE", typeusername, "\n\n\nn", "------------------")
+                    print("WELCOME TO YOUR FILE", typeusername, "\n\n\n\n", "------------------")
                     while True:
                         file_options = int(input("\n\nWhat do you want to do? TYPE --\n1 For Reading Your file\n2 For Writing to your file\n3 For Formatting File\n4 For Logging Out\n"))
                         if file_options == 1:
@@ -148,7 +148,7 @@ while 1:
                                     userpointer.write("\n")
 
                         elif file_options == 3:
-                            with open(f"{typeusername}.txt", "x") as userpointer:
+                            with open(f"{typeusername}.txt", "w") as userpointer:
                                 userpointer.write("")
 
                         elif file_options == 4:
@@ -168,7 +168,7 @@ while 1:
             else:
                 print("WRONG USERNAME OR PASSWORD COMBINATION")
 
-        else
+        else:
             print("USER NOT FOUND")
 
 
